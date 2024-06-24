@@ -1,0 +1,497 @@
+# vsim -debugdb -c -do "log -r /*;save -oneexit -directive -codeall;run -all;exit" work.top 
+# Start time: 12:59:25 on Jun 20,2024
+# ** Warning: (vsim-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.top_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading /root/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# log -r /*
+# save -oneexit -directive -codeall
+# invalid command name "save"
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test base_test...
+# UVM_INFO tb/../sv/yapp_test_lib.sv(62) @ 0: uvm_test_top [uvm_test_top] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(58) @ 0: uvm_test_top.env [env] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(64) @ 0: uvm_test_top.env.ag [ag] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(60) @ 0: uvm_test_top.env.ag.dr [dr] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(57) @ 0: uvm_test_top.env.ag.mn [mn] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(55) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in build_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(67) @ 0: uvm_test_top.env.ag.dr [dr] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(64) @ 0: uvm_test_top.env.ag.mn [mn] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(62) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(77) @ 0: uvm_test_top.env.ag [ag] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(67) @ 0: uvm_test_top.env [env] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(72) @ 0: uvm_test_top [uvm_test_top] we are in connect_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(73) @ 0: uvm_test_top.env.ag.dr [dr] we are in EOE
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(70) @ 0: uvm_test_top.env.ag.mn [mn] we are in EOE
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(68) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in EOE
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(85) @ 0: uvm_test_top.env.ag [ag] we are in EOE
+# UVM_INFO tb/../sv/yapp_tx_env.sv(73) @ 0: uvm_test_top.env [env] we are in EOE
+# UVM_INFO tb/../sv/yapp_test_lib.sv(78) @ 0: uvm_test_top [uvm_test_top] we are in EOE
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               base_test               -     @466 
+#   env                      environment             -     @477 
+#     ag                     agent                   -     @484 
+#       dr                   driver                  -     @601 
+#         rsp_port           uvm_analysis_port       -     @616 
+#         seq_item_port      uvm_seq_item_pull_port  -     @608 
+#       mn                   monitor                 -     @624 
+#       seqr                 sequencer               -     @492 
+#         rsp_export         uvm_analysis_export     -     @499 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @593 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(79) @ 0: uvm_test_top.env.ag.dr [dr] we are in SOS
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(76) @ 0: uvm_test_top.env.ag.mn [mn] we are in SOS
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(74) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in SOS
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(91) @ 0: uvm_test_top.env.ag [ag] we are in SOS
+# UVM_INFO tb/../sv/yapp_tx_env.sv(79) @ 0: uvm_test_top.env [env] we are in SOS
+# UVM_INFO tb/../sv/yapp_test_lib.sv(85) @ 0: uvm_test_top [uvm_test_top] we are in SOS
+# UVM_INFO tb/../sv/yapp_test_lib.sv(91) @ 0: uvm_test_top [uvm_test_top] we are in run_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(85) @ 0: uvm_test_top.env [env] we are in run_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(97) @ 0: uvm_test_top.env.ag [ag] we are in run_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(80) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in run_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(82) @ 0: uvm_test_top.env.ag.mn [mn] we are in run_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(85) @ 0: uvm_test_top.env.ag.dr [dr] we are in run_phase
+# bala
+# -> 11000001
+# -> 01010000
+# -> 10100011
+# -> 10011110
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @638                              
+#   length                       integral      6     48                                
+#   address                      integral      2     'd1                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b1010000                         
+#     [1]                        integral      8     'b10100011                        
+#     [2]                        integral      8     'b10011110                        
+#   parity                       integral      8     'b10101100                        
+#   packet_delay                 integral      32    'd7                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 10101000
+# -> 01011111
+# -> 01111101
+# -> 10000101
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @645                              
+#   length                       integral      6     42                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b1011111                         
+#     [1]                        integral      8     'b1111101                         
+#     [2]                        integral      8     'b10000101                        
+#   parity                       integral      8     'b1111                            
+#   packet_delay                 integral      32    'd11                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 10100000
+# -> 00000100
+# -> 10100001
+# -> 11001110
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @649                              
+#   length                       integral      6     40                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b100                             
+#     [1]                        integral      8     'b10100001                        
+#     [2]                        integral      8     'b11001110                        
+#   parity                       integral      8     'b11001011                        
+#   packet_delay                 integral      32    'd9                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11001101
+# -> 10010000
+# -> 10000100
+# -> 10001110
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @653                              
+#   length                       integral      6     51                                
+#   address                      integral      2     'd1                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b10010000                        
+#     [1]                        integral      8     'b10000100                        
+#     [2]                        integral      8     'b10001110                        
+#   parity                       integral      8     'b1010111                         
+#   packet_delay                 integral      32    'd2                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11000100
+# -> 10001001
+# -> 11100010
+# -> 00100000
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @659                              
+#   length                       integral      6     49                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b10001001                        
+#     [1]                        integral      8     'b11100010                        
+#     [2]                        integral      8     'b100000                          
+#   parity                       integral      8     'b10001111                        
+#   packet_delay                 integral      32    'd15                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11010000
+# -> 11100001
+# -> 00000111
+# -> 10100110
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @663                              
+#   length                       integral      6     52                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11100001                        
+#     [1]                        integral      8     'b111                             
+#     [2]                        integral      8     'b10100110                        
+#   parity                       integral      8     'b10010000                        
+#   packet_delay                 integral      32    'd9                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11000100
+# -> 00000110
+# -> 10100001
+# -> 00101111
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @667                              
+#   length                       integral      6     49                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b110                             
+#     [1]                        integral      8     'b10100001                        
+#     [2]                        integral      8     'b101111                          
+#   parity                       integral      8     'b1001100                         
+#   packet_delay                 integral      32    'd20                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 10111000
+# -> 11111011
+# -> 10000001
+# -> 01010001
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @673                              
+#   length                       integral      6     46                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11111011                        
+#     [1]                        integral      8     'b10000001                        
+#     [2]                        integral      8     'b1010001                         
+#   parity                       integral      8     'b10010011                        
+#   packet_delay                 integral      32    'd17                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 10001010
+# -> 11001110
+# -> 11101111
+# -> 11100011
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @677                              
+#   length                       integral      6     34                                
+#   address                      integral      2     2                                 
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11001110                        
+#     [1]                        integral      8     'b11101111                        
+#     [2]                        integral      8     'b11100011                        
+#   parity                       integral      8     'b1001000                         
+#   packet_delay                 integral      32    'd6                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11001100
+# -> 11011100
+# -> 00101001
+# -> 00111101
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @681                              
+#   length                       integral      6     51                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11011100                        
+#     [1]                        integral      8     'b101001                          
+#     [2]                        integral      8     'b111101                          
+#   parity                       integral      8     'b100                             
+#   packet_delay                 integral      32    'd0                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 01010010
+# -> 11100001
+# -> 00110111
+# -> 01100101
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @687                              
+#   length                       integral      6     'd20                              
+#   address                      integral      2     2                                 
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11100001                        
+#     [1]                        integral      8     'b110111                          
+#     [2]                        integral      8     'b1100101                         
+#   parity                       integral      8     'b11100001                        
+#   packet_delay                 integral      32    'd8                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 00011100
+# -> 00011100
+# -> 10010010
+# -> 01100000
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @691                              
+#   length                       integral      6     'd7                               
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11100                           
+#     [1]                        integral      8     'b10010010                        
+#     [2]                        integral      8     'b1100000                         
+#   parity                       integral      8     'b11110010                        
+#   packet_delay                 integral      32    'd13                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 01111100
+# -> 00101101
+# -> 01111011
+# -> 11100101
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @695                              
+#   length                       integral      6     'd31                              
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b101101                          
+#     [1]                        integral      8     'b1111011                         
+#     [2]                        integral      8     'b11100101                        
+#   parity                       integral      8     'b11001111                        
+#   packet_delay                 integral      32    'd11                              
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 10101000
+# -> 11101100
+# -> 01101111
+# -> 01010101
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @701                              
+#   length                       integral      6     42                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b11101100                        
+#     [1]                        integral      8     'b1101111                         
+#     [2]                        integral      8     'b1010101                         
+#   parity                       integral      8     'b1111110                         
+#   packet_delay                 integral      32    'd5                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# -> 11100000
+# -> 00100110
+# -> 10110101
+# -> 01001100
+# -------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                             
+# -------------------------------------------------------------------------------------
+# req                            yapp_packet   -     @705                              
+#   length                       integral      6     56                                
+#   address                      integral      2     'd0                               
+#   payload                      da(integral)  3     -                                 
+#     [0]                        integral      8     'b100110                          
+#     [1]                        integral      8     'b10110101                        
+#     [2]                        integral      8     'b1001100                         
+#   parity                       integral      8     'b111111                          
+#   packet_delay                 integral      32    'd7                               
+#   parity_type                  parity_t      32    GOOD_PARITY                       
+#   begin_time                   time          64    0                                 
+#   depth                        int           32    'd2                               
+#   parent sequence (name)       string        9     sequences                         
+#   parent sequence (full name)  string        34    uvm_test_top.env.ag.seqr.sequences
+#   sequencer                    string        24    uvm_test_top.env.ag.seqr          
+# -------------------------------------------------------------------------------------
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(97) @ 0: uvm_test_top.env.ag.dr [dr] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(88) @ 0: uvm_test_top.env.ag.mn [mn] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(86) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(103) @ 0: uvm_test_top.env.ag [ag] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(91) @ 0: uvm_test_top.env [env] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(97) @ 0: uvm_test_top [uvm_test_top] we are in extract_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(103) @ 0: uvm_test_top.env.ag.dr [dr] we are in check_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(94) @ 0: uvm_test_top.env.ag.mn [mn] we are in check_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(92) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in check_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(109) @ 0: uvm_test_top.env.ag [ag] we are in check_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(97) @ 0: uvm_test_top.env [env] we are in check_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(103) @ 0: uvm_test_top [uvm_test_top] we are in check_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(109) @ 0: uvm_test_top.env.ag.dr [dr] we are in report_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(100) @ 0: uvm_test_top.env.ag.mn [mn] we are in report_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(98) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in report_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(115) @ 0: uvm_test_top.env.ag [ag] we are in report_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(103) @ 0: uvm_test_top.env [env] we are in report_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(109) @ 0: uvm_test_top [uvm_test_top] we are in report_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(115) @ 0: uvm_test_top [uvm_test_top] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(109) @ 0: uvm_test_top.env [env] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(121) @ 0: uvm_test_top.env.ag [ag] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_driver.sv(115) @ 0: uvm_test_top.env.ag.dr [dr] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(106) @ 0: uvm_test_top.env.ag.mn [mn] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_sequencer.sv(104) @ 0: uvm_test_top.env.ag.seqr [seqr] we are in final_phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   58
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [UVMTOP]     1
+# [ag]     9
+# [dr]     9
+# [env]     9
+# [mn]     9
+# [seqr]     9
+# [uvm_test_top]     9
+# ** Note: $finish    : /root/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 0 ns  Iteration: 256  Instance: /top
+# End time: 12:59:30 on Jun 20,2024, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 2
