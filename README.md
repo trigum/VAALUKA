@@ -1,2 +1,0 @@
-# VAALUKA
-my_work
