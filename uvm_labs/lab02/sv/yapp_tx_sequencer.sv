@@ -1,106 +1,106 @@
-
-/*-----------------------------------------------------------------
-File name     : yapp_tx_sequencer.sv
-Description   : this file is act a medium of driver and sequence 
-Notes         : 
--------------------------------------------------------------------
------------------------------------------------------------------*/
-
-//------------------------------------------------------------------------------
-//
-// yapp_tx_sequencer
-//
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////
+//  File name     : yapp_tx_sequencer.sv                            //
+//                                                                   //
+//  Description   : This file defines the sequencer component        //
+//                  responsible for coordinating packet generation   //
+//                  and transmission in the yapp_tx system.          //
+//                                                                   //
+//  Notes         : This sequencer acts as an intermediary between   //
+//                  the driver and sequence components, managing     //
+//                  the flow of data packets in the system.          //
+///////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCER
 `define SEQUENCER
 
+// Class definition for sequencer
 class sequencer extends uvm_sequencer #(yapp_packet);
   
-  `uvm_component_utils(sequencer);                                                                // factory registration
+  // Factory registration for sequencer
+  `uvm_component_utils(sequencer)
 
-  extern function new(string name="sequencer",uvm_component parent=null);
+  // Extern constructor
+  extern function new(string name = "sequencer", uvm_component parent = null);
     
+  // Extern build phase method
   extern function void build_phase(uvm_phase phase);                                  
  
+  // Extern connect phase method
   extern function void connect_phase(uvm_phase phase);                                 
 
+  // Extern end of elaboration phase method
   extern function void end_of_elaboration_phase(uvm_phase phase);                      
   
+  // Extern start of simulation phase method
   extern function void start_of_simulation_phase(uvm_phase phase);     
   
+  // Extern run phase task
   extern task run_phase(uvm_phase phase);                                                  
   
+  // Extern extract phase method
   extern function void extract_phase(uvm_phase phase);                                 
   
+  // Extern check phase method
   extern function void check_phase(uvm_phase phase);                                   
   
+  // Extern report phase method
   extern function void report_phase(uvm_phase phase);                                 
   
+  // Extern final phase method
   extern function void final_phase(uvm_phase phase);
 
 endclass
 
 `endif
 
-  //constructor
+// Constructor for sequencer
+function sequencer::new(string name = "sequencer", uvm_component parent = null);
+  super.new(name, parent);     
+endfunction
 
-  function sequencer::new(string name="sequencer",uvm_component parent=null);
-    super.new(name,parent);     
-  endfunction
-
-  // build_phase
-
-  function void sequencer::build_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in build_phase",UVM_LOW)  
-  endfunction
+// build_phase method
+function void sequencer::build_phase(uvm_phase phase);
+  `uvm_info(get_name, "we are in build_phase", UVM_LOW)  
+endfunction
   
-  // connect phase
+// connect phase method
+function void sequencer::connect_phase(uvm_phase phase);  
+  super.connect_phase(phase);    
+  `uvm_info(get_name, "we are in connect_phase", UVM_LOW)
+endfunction
+
+// end_of_elaboration phase method
+function void sequencer::end_of_elaboration_phase(uvm_phase phase);                             
+  `uvm_info(get_name, "we are in EOE", UVM_LOW)
+endfunction
   
-  function void sequencer::connect_phase(uvm_phase phase);  
-    super.connect_phase(phase);    
-    `uvm_info(get_name,"we are in connect_phase",UVM_LOW)
-  endfunction
+// start_of_simulation phase method
+function void sequencer::start_of_simulation_phase(uvm_phase phase);                            
+  `uvm_info(get_name, "we are in SOS", UVM_LOW)
+endfunction
 
-  // end of elobaration phase
-
-  function void sequencer::end_of_elaboration_phase(uvm_phase phase);                             
-    `uvm_info(get_name,"we are in EOE",UVM_LOW)
-  endfunction
-  
-  // start of simulation phase
-
-  function void sequencer::start_of_simulation_phase(uvm_phase phase);                            
-    `uvm_info(get_name,"we are in SOS",UVM_LOW)
-  endfunction
-
-  // run phase
-
-  task sequencer::run_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                              // run phase which print topology
-  endtask
+// run phase task
+task sequencer::run_phase(uvm_phase phase);
+  `uvm_info(get_name, "we are in run_phase", UVM_LOW)                                             
+endtask
  
-  // extract phase
+// extract phase method
+function void sequencer::extract_phase(uvm_phase phase); 
+  `uvm_info(get_name, "we are in extract_phase", UVM_LOW)                                       
+endfunction
 
-  function void sequencer::extract_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in extract_phase",UVM_LOW)                                       
-  endfunction
+// check phase method
+function void sequencer::check_phase(uvm_phase phase); 
+  `uvm_info(get_name, "we are in check_phase", UVM_LOW)                                         
+endfunction
 
-  // check phase
+// report phase method
+function void sequencer::report_phase(uvm_phase phase); 
+  `uvm_info(get_name, "we are in report_phase", UVM_LOW)                                        
+endfunction
 
-  function void sequencer::check_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in check_phase",UVM_LOW)                                         
-  endfunction
-
-  // report phase
-
-  function void sequencer::report_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in report_phase",UVM_LOW)                                        
-  endfunction
-
-  // final phase
-
-  function void sequencer::final_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in final_phase",UVM_LOW)                                         
-  endfunction
+// final phase method
+function void sequencer::final_phase(uvm_phase phase); 
+  `uvm_info(get_name, "we are in final_phase", UVM_LOW)                                         
+endfunction
 

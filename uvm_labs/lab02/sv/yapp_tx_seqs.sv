@@ -1,52 +1,55 @@
 
-/*-----------------------------------------------------------------
-File name     : yapp_tx_seqs.sv
-Description   : this file is to generate stimulus 
-Notes         : 
--------------------------------------------------------------------
------------------------------------------------------------------*/
-
-//------------------------------------------------------------------------------
-//
-// yapp_tx_seqs
-//
-//------------------------------------------------------------------------------
-
+///////////////////////////////////////////////////////////////////////
+//  File name     : yapp_tx_seqs.sv                                   //
+//                                                                    //
+//  Description   : This file defines a sequence to generate stimulus //
+//                  packets for the yapp_tx system.                   //
+//                                                                    //
+//  Notes         : The sequence generates randomized packets using   //
+//                  the yapp_packet class, facilitating testing of    //
+//                  the system's packet handling capabilities.        //
+///////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCES
 `define SEQUENCES
 
+// Class definition for sequences
 class sequences extends uvm_sequence #(yapp_packet);
   
-  `uvm_object_utils(sequences)                                       // factory registration
+  // Factory registration for sequences
+  `uvm_object_utils(sequences)
   
+  // Extern constructor
   extern function new(string name = "sequences");
-                                                                     // methods
+
+  // Extern body task
   extern task body();                     
   
 endclass
 `endif
 
-  // constructor
-
-  function sequences::new(string name = "sequences");
-    super.new(name);             
-  endfunction
+// Constructor for sequences
+function sequences::new(string name = "sequences");
+  super.new(name);             
+endfunction
   
-  // Body
-
-  task sequences::body();
-    if(starting_phase!=null)	  
-      starting_phase.raise_objection(this);                         // raising of objection      
+// Body task
+task sequences::body();
+  // Raise objection to synchronize with other components
+  if (starting_phase != null)
+    starting_phase.raise_objection(this);  
     
-    for(int i=0;i<15;i++)
-    begin
-      req=yapp_packet::type_id::create("req");
-      start_item(req);
-      req.randomize();                                             // randomizing the packets
-      finish_item(req);
-    end
-    if(starting_phase!=null)	      
-      starting_phase.drop_objection(this);                         // dropping objection
-  endtask
+  // Generate 15 randomized packets
+  for (int i = 0; i < 15; i++)
+  begin
+    req = yapp_packet::type_id::create("req");
+    start_item(req);
+    req.randomize();                    
+    finish_item(req);
+  end
+  
+  // Drop objection after generating packets
+  if (starting_phase != null)
+    starting_phase.drop_objection(this);  
+endtask
   

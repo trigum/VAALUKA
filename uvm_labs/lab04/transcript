@@ -1,6 +1,6 @@
 # vsim "+UVM_TESTNAME=set_config_test" -debugdb -c -do "log -r /*;save -oneexit -directive -codeall;run -all;exit" work.top 
-# Start time: 13:45:26 on Jun 20,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Start time: 15:12:13 on Jun 26,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2021.2_1 linux_x86_64 May 15 2021
 # //
@@ -49,18 +49,18 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test set_config_test...
-# UVM_INFO tb/../sv/yapp_test_lib.sv(63) @ 0: uvm_test_top [uvm_test_top] we are in build_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(55) @ 0: uvm_test_top.env [env] we are in build_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(63) @ 0: uvm_test_top.env.ag [ag] we are in build_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(55) @ 0: uvm_test_top.env.ag.mn [mn] we are in build_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(62) @ 0: uvm_test_top.env.ag.mn [mn] we are in connect_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(76) @ 0: uvm_test_top.env.ag [ag] we are in connect_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(64) @ 0: uvm_test_top.env [env] we are in connect_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(73) @ 0: uvm_test_top [uvm_test_top] we are in connect_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(271) @ 0: uvm_test_top [uvm_test_top] we are in connect_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(68) @ 0: uvm_test_top.env.ag.mn [mn] we are in EOE
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(85) @ 0: uvm_test_top.env.ag [ag] we are in EOE
-# UVM_INFO tb/../sv/yapp_tx_env.sv(70) @ 0: uvm_test_top.env [env] we are in EOE
+# UVM_INFO tb/../sv/yapp_test_lib.sv(58) @ 0: uvm_test_top [uvm_test_top] Entered build_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(47) @ 0: uvm_test_top.env [env] Entered build_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(56) @ 0: uvm_test_top.env.ag [ag] Entered build_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(44) @ 0: uvm_test_top.env.ag.mn [mn] Entered build_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(49) @ 0: uvm_test_top.env.ag.mn [mn] Entered connect_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(74) @ 0: uvm_test_top.env.ag [ag] Entered connect_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(56) @ 0: uvm_test_top.env [env] Entered connect_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(73) @ 0: uvm_test_top [uvm_test_top] Entered connect_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(246) @ 0: uvm_test_top [uvm_test_top] Entered connect_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(55) @ 0: uvm_test_top.env.ag.mn [mn] Entered end_of_elaboration_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(87) @ 0: uvm_test_top.env.ag [ag] Entered end_of_elaboration_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(63) @ 0: uvm_test_top.env [env] Entered end_of_elaboration_phase
 # UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 # ------------------------------------------
 # Name          Type             Size  Value
@@ -71,30 +71,30 @@
 #       mn      monitor          -     @495 
 # ------------------------------------------
 # 
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(74) @ 0: uvm_test_top.env.ag.mn [mn] we are in SOS
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(91) @ 0: uvm_test_top.env.ag [ag] we are in SOS
-# UVM_INFO tb/../sv/yapp_tx_env.sv(76) @ 0: uvm_test_top.env [env] we are in SOS
-# UVM_INFO tb/../sv/yapp_test_lib.sv(283) @ 0: uvm_test_top [uvm_test_top] we are in SOS
-# UVM_INFO tb/../sv/yapp_test_lib.sv(289) @ 0: uvm_test_top [uvm_test_top] we are in run_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(82) @ 0: uvm_test_top.env [env] we are in run_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(97) @ 0: uvm_test_top.env.ag [ag] we are in run_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(80) @ 0: uvm_test_top.env.ag.mn [mn] we are in run_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(86) @ 0: uvm_test_top.env.ag.mn [mn] we are in extract_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(103) @ 0: uvm_test_top.env.ag [ag] we are in extract_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(88) @ 0: uvm_test_top.env [env] we are in extract_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(295) @ 0: uvm_test_top [uvm_test_top] we are in extract_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(92) @ 0: uvm_test_top.env.ag.mn [mn] we are in check_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(109) @ 0: uvm_test_top.env.ag [ag] we are in check_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(94) @ 0: uvm_test_top.env [env] we are in check_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(301) @ 0: uvm_test_top [uvm_test_top] we are in check_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(98) @ 0: uvm_test_top.env.ag.mn [mn] we are in report_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(115) @ 0: uvm_test_top.env.ag [ag] we are in report_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(100) @ 0: uvm_test_top.env [env] we are in report_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(307) @ 0: uvm_test_top [uvm_test_top] we are in report_phase
-# UVM_INFO tb/../sv/yapp_test_lib.sv(313) @ 0: uvm_test_top [uvm_test_top] we are in final_phase
-# UVM_INFO tb/../sv/yapp_tx_env.sv(106) @ 0: uvm_test_top.env [env] we are in final_phase
-# UVM_INFO tb/../sv/yapp_tx_agent.sv(121) @ 0: uvm_test_top.env.ag [ag] we are in final_phase
-# UVM_INFO tb/../sv/yapp_tx_monitor.sv(104) @ 0: uvm_test_top.env.ag.mn [mn] we are in final_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(60) @ 0: uvm_test_top.env.ag.mn [mn] Entered start_of_simulation_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(94) @ 0: uvm_test_top.env.ag [ag] Entered start_of_simulation_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(68) @ 0: uvm_test_top.env [env] Entered start_of_simulation_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(257) @ 0: uvm_test_top [uvm_test_top] Entered start_of_simulation_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(262) @ 0: uvm_test_top [uvm_test_top] Entered run_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(73) @ 0: uvm_test_top.env [env] Entered run_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(101) @ 0: uvm_test_top.env.ag [ag] Entered run_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(65) @ 0: uvm_test_top.env.ag.mn [mn] Entered run_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(70) @ 0: uvm_test_top.env.ag.mn [mn] Entered extract_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(108) @ 0: uvm_test_top.env.ag [ag] Entered extract_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(78) @ 0: uvm_test_top.env [env] Entered extract_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(267) @ 0: uvm_test_top [uvm_test_top] Entered extract_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(75) @ 0: uvm_test_top.env.ag.mn [mn] Entered check_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(115) @ 0: uvm_test_top.env.ag [ag] Entered check_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(83) @ 0: uvm_test_top.env [env] Entered check_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(272) @ 0: uvm_test_top [uvm_test_top] Entered check_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(80) @ 0: uvm_test_top.env.ag.mn [mn] Entered report_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(122) @ 0: uvm_test_top.env.ag [ag] Entered report_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(88) @ 0: uvm_test_top.env [env] Entered report_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(277) @ 0: uvm_test_top [uvm_test_top] Entered report_phase
+# UVM_INFO tb/../sv/yapp_test_lib.sv(282) @ 0: uvm_test_top [uvm_test_top] Entered final_phase
+# UVM_INFO tb/../sv/yapp_tx_env.sv(93) @ 0: uvm_test_top.env [env] Entered final_phase
+# UVM_INFO tb/../sv/yapp_tx_agent.sv(129) @ 0: uvm_test_top.env.ag [ag] Entered final_phase
+# UVM_INFO tb/../sv/yapp_tx_monitor.sv(85) @ 0: uvm_test_top.env.ag.mn [mn] Entered final_phase
 # 
 # --- UVM Report Summary ---
 # 
@@ -113,5 +113,5 @@
 # [uvm_test_top]     9
 # ** Note: $finish    : /root/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 0 ns  Iteration: 215  Instance: /top
-# End time: 13:45:28 on Jun 20,2024, Elapsed time: 0:00:02
+# End time: 15:12:15 on Jun 26,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

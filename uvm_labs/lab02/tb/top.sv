@@ -1,12 +1,10 @@
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  File name     : top.sv                                                                                          //
-//                                                                                                                  //
-//  Description   : this file is top module for yapp_router which have all the interface and design instatiation    //
-//                                                                                                                  //
-//                                                                                                                  //
-//  Notes         : it going to start the tb phases                                                                 //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  File name     : top.sv                                                                                             //
+//                                                                                                                     //
+//  Description   : This file is the top module for yapp_router, which contains all interface and design instantiation.//
+//                                                                                                                     //
+//  Notes         : It initiates the testbench phases.                                                                 //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import uvm_pkg::*;                                                                                 
 
@@ -16,22 +14,22 @@ import uvm_pkg::*;
 
 module top();
 
-// environment handle declaration
+  // Environment handle declaration
   environment env;                                                                                
   
   initial
   begin 
-    env = environment::type_id::create("env",null);                                          
+    env = environment::type_id::create("env", null);                                          
   end
   
   initial
   begin
-
-// setting a default sequence
-    uvm_config_wrapper :: set(null,"env.ag.seqr.run_phase","default_sequence",sequences::type_id::get());  
+    // Setting a default sequence
+    uvm_config_wrapper::set(null, "env.ag.seqr.run_phase", "default_sequence", sequences::type_id::get());  
    
-// this delay to give space to driver to see the posedge of reset
- run_test();                                                                                      
+    // This delay creates space for the driver to see the posedge of reset
+    run_test();                                                                                      
   end
 
-endmodule 	
+endmodule
+

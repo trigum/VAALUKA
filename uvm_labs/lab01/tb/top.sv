@@ -1,40 +1,45 @@
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  File name     : top.sv                                                                                          //
-//                                                                                                                  //
-//  Description   : this file is top module for yapp_router which have all the interface and design instatiation    //
-//                                                                                                                  //
-//                                                                                                                  //
-//  Notes         : it going to start the tb phases                                                                 //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  File name     : top.sv                                                                                              //
+//                                                                                                                      //
+//  Description   : This file is the top module for yapp_router, containing all the interfaces and design instantiation.//
+//                                                                                                                      //
+//  Notes         : This module initiates the testbench phases for packet generation and verification.                  //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import uvm_pkg::*;
 
-`include "uvm_macros.svh"                         
+`include "uvm_macros.svh"
 
-// enum for generating good and bad packet
-typedef enum{GOOD_PARITY,BAD_PARITY}parity_t;
+// Enumeration for generating packets with good and bad parity
+typedef enum {GOOD_PARITY, BAD_PARITY} parity_t;
 
-`include "../sv/yapp_packet.sv"              
+`include "../sv/yapp_packet.sv"
 
 module top();
 
-// sequence item handle declaration
-  yapp_packet t1;                      
-  
+  // Declare a handle for the sequence item (packet)
+  yapp_packet t1;
+
   initial
 
-// generating 10 packets
-  repeat(10)
-  begin
-// randomize and display the packet if not raise fatal
-    t1 = yapp_packet::type_id::create("t1");  
-    if(!t1.randomize())
-      `uvm_fatal("t1 is not randomized","TOP")     
-    else  
-	
-// printing of randomized packet  
-      t1.print();
-  end                                           
+    // Generate and randomize 10 packets
+    repeat (10) begin
+
+      // Create a new instance of the yapp_packet
+      t1 = yapp_packet::type_id::create("t1");
+
+      // Randomize the packet and check if randomization is successful
+      if (!t1.randomize())
+        
+        // If randomization fails, raise a fatal error
+        `uvm_fatal("t1 is not randomized", "TOP")
+      else
+
+        // If randomization is successful, print the details of the packet
+        t1.print();
+    end
 
 endmodule
+

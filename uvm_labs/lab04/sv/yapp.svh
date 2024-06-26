@@ -9,7 +9,7 @@
 `ifndef PACKAGE
 `define PACKAGE
 
-// we using enum to determine good and bad packet
+    // we using enum to determine good and bad packet
     typedef enum{GOOD_PARITY,BAD_PARITY}parity_t;
 
     `include "yapp_packet.sv"     

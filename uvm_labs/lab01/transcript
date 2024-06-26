@@ -1,7 +1,7 @@
 # vsim -debugdb -c -do "log -r /*;save -oneexit -directive -codeall;run -all;exit" work.top 
-# Start time: 14:31:08 on Jun 21,2024
+# Start time: 12:16:35 on Jun 25,2024
 # ** Warning: (vsim-4308) Enabling visibility using +acc is recommended with debug flow.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-4308) Enabling visibility using +acc is recommended with debug flow.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
@@ -427,5 +427,5 @@
 #   parity_type   parity_t      32    GOOD_PARITY
 # -----------------------------------------------
 # exit
-# End time: 14:31:11 on Jun 21,2024, Elapsed time: 0:00:03
+# End time: 12:16:40 on Jun 25,2024, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 2

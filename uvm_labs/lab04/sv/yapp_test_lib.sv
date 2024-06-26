@@ -1,316 +1,287 @@
-/*-----------------------------------------------------------------
-File name     : yapp_test_lib.sv
-Description   : this file have to create the environment and start the respective sequence 
-Notes         : 
--------------------------------------------------------------------
------------------------------------------------------------------*/
-
-//------------------------------------------------------------------------------
-//
-// test library
-//
-//------------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////
+//  File name     : yapp_test_lib.sv                                 //
+//                                                                   //
+//  Description   : This file defines the base test class for        //
+//                  creating the environment and starting the        //
+//                  respective sequence in a UVM-based verification  //
+//                  environment.                                     //
+//                                                                   //
+//  Notes         : The class includes phases like build, connect,   //
+//                  end_of_elaboration, start_of_simulation, run,    //
+//                  extract, check, report, and final, which are     //
+//                  essential for the UVM test flow.                 //
+///////////////////////////////////////////////////////////////////////
 
 `ifndef TEST
 `define TEST
 
-/////////////////////
-//                 //
-//   BASE TEST     //
-//                 //
-/////////////////////
+//////////////////////
+//                  //
+//    BASE TEST     //
+//                  //
+//////////////////////
 
 class base_test extends uvm_test;
   
   `uvm_component_utils(base_test)
   
+  // Test environment instance
   environment env;
   
+  // Active/passive test configuration
   uvm_active_passive_enum is_active;
   
-  extern function new (string name="base_test",uvm_component parent=null);
+  // Constructor
+  extern function new(string name = "base_test", uvm_component parent = null);
    
+  // Phases
   extern function void build_phase(uvm_phase phase);                                  
- 
   extern function void connect_phase(uvm_phase phase);                                 
-
   extern function void end_of_elaboration_phase(uvm_phase phase);                      
-  
   extern function void start_of_simulation_phase(uvm_phase phase);     
-  
-  extern task run_phase(uvm_phase phase);                                                  // extern  phases
-  
+  extern task run_phase(uvm_phase phase);
   extern function void extract_phase(uvm_phase phase);                                 
-  
   extern function void check_phase(uvm_phase phase);                                   
-  
   extern function void report_phase(uvm_phase phase);                                 
-  
   extern function void final_phase(uvm_phase phase);
-
   
 endclass
 
-  //constructor
 
-  function base_test::new (string name="base_test",uvm_component parent=null);
-    super.new(name,parent);
-  endfunction
+// Constructor for base_test
+function base_test::new(string name = "base_test", uvm_component parent = null);
+  super.new(name, parent);
+endfunction
 
-  // build phase
-
-  function void base_test::build_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in build_phase",UVM_LOW)      
-    uvm_config_wrapper ::set(this,"env.ag.seqr.run_phase","default_sequence",sequences::type_id::get());
-    super.build_phase(phase);
-    env=environment::type_id::create("env",this);
-  endfunction
-
-  // connect phase
+// build_phase: Sets up the test environment and configurations
+function void base_test::build_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered build_phase", UVM_LOW)      
   
-  function void base_test::connect_phase(uvm_phase phase);  
-    super.connect_phase(phase);    
-    `uvm_info(get_name,"we are in connect_phase",UVM_LOW)
-  endfunction
+  // Configure sequence
+  uvm_config_wrapper::set(this, "env.ag.seqr.run_phase", "default_sequence", sequences::type_id::get());
+  
+  // Call super class build phase
+  super.build_phase(phase);
+  
+  // Create environment instance
+  env = environment::type_id::create("env", this);
+endfunction
 
-  // end of elaboration phase
+// connect_phase: Handles connections and setup after build phase
+function void base_test::connect_phase(uvm_phase phase);  
+  super.connect_phase(phase);    
+  `uvm_info(get_name, "Entered connect_phase", UVM_LOW)
+endfunction
 
-  function void base_test::end_of_elaboration_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in EOE",UVM_LOW)    
-    uvm_top.print_topology();
-  endfunction 
+// end_of_elaboration_phase: Final setup before simulation starts
+function void base_test::end_of_elaboration_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered end_of_elaboration_phase", UVM_LOW)    
+  
+  // Print UVM topology
+  uvm_top.print_topology();
+endfunction 
 
-  // start of simulation phase
+// start_of_simulation_phase: Initial setup at the start of simulation
+function void base_test::start_of_simulation_phase(uvm_phase phase);                            
+  `uvm_info(get_name, "Entered start_of_simulation_phase", UVM_LOW)
+endfunction
 
-  function void base_test::start_of_simulation_phase(uvm_phase phase);                            
-    `uvm_info(get_name,"we are in SOS",UVM_LOW)
-  endfunction
-
-  // run phase
-
-  task base_test::run_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                              
-  endtask
+// run_phase: Executes the main test sequence
+task base_test::run_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered run_phase", UVM_LOW)                                              
+endtask
  
-  // extract phase
+// extract_phase: Performs data extraction tasks
+function void base_test::extract_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered extract_phase", UVM_LOW)                                       
+endfunction
 
-  function void base_test::extract_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in extract_phase",UVM_LOW)                                       
-  endfunction
+// check_phase: Verifies expected results against actual results
+function void base_test::check_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered check_phase", UVM_LOW)                                         
+endfunction
 
-  // check phase
+// report_phase: Generates test report or summary
+function void base_test::report_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered report_phase", UVM_LOW)                                        
+endfunction
 
-  function void base_test::check_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in check_phase",UVM_LOW)                                         
-  endfunction
+// final_phase: Cleanup tasks and final reporting
+function void base_test::final_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered final_phase", UVM_LOW)                                         
+endfunction
 
-  // report phase
-
-  function void base_test::report_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in report_phase",UVM_LOW)                                        
-  endfunction
-
-  // final phase
-
-  function void base_test::final_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in final_phase",UVM_LOW)                                         
-  endfunction
-
-
-
-/////////////////////
-//                 //
-//   SHORT_PACKET  //
-//                 //
-/////////////////////
-
+//////////////////////////
+//                      //
+//  SHORT PACKET TEST   //
+//                      //
+//////////////////////////
 
 class short_packet_test extends base_test;
   
   `uvm_component_utils(short_packet_test)
    
-  extern function new(string name ="short_packet_test",uvm_component parent=null);
+  extern function new(string name = "short_packet_test", uvm_component parent = null);
   
+  // Phases
   extern function void build_phase(uvm_phase phase);                                  
- 
   extern function void connect_phase(uvm_phase phase);                                 
-
   extern function void end_of_elaboration_phase(uvm_phase phase);                      
-  
   extern function void start_of_simulation_phase(uvm_phase phase);     
-  
-  extern task run_phase(uvm_phase phase);                                                  // extern  phases
-  
+  extern task run_phase(uvm_phase phase);
   extern function void extract_phase(uvm_phase phase);                                 
-  
   extern function void check_phase(uvm_phase phase);                                   
-  
   extern function void report_phase(uvm_phase phase);                                 
-  
   extern function void final_phase(uvm_phase phase);
 
 endclass
   
 
-  // constructor
 
-  function short_packet_test::new(string name ="short_packet_test",uvm_component parent=null);
-    super.new(name,parent);
-  endfunction
+// Constructor for short_packet_test
+function short_packet_test::new(string name = "short_packet_test", uvm_component parent = null);
+  super.new(name, parent);
+endfunction
   
-  // build phase
-
-  function void short_packet_test::build_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in build_phase",UVM_LOW)          
-    set_type_override_by_type(yapp_packet::get_type(),yapp_short_item::get_type());
-    set_config_int ("env.ag","is_active",UVM_ACTIVE);
-    super.build_phase(phase);
-  endfunction
+// build_phase: Sets up specific configurations for short packet testing
+function void short_packet_test::build_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered build_phase", UVM_LOW)          
   
-  // connect phase
+  // Override packet type
+  set_type_override_by_type(yapp_packet::get_type(), yapp_short_item::get_type());
   
-  function void short_packet_test::connect_phase(uvm_phase phase);  
-    super.connect_phase(phase);    
-    `uvm_info(get_name,"we are in connect_phase",UVM_LOW)
-  endfunction
-
-  // end of elaboration phase
+  // Set active configuration
+  set_config_int("env.ag", "is_active", UVM_ACTIVE);
   
-  function void short_packet_test::end_of_elaboration_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in EOE",UVM_LOW)        
-    uvm_top.print_topology();
-  endfunction 
+  // Call super class build phase
+  super.build_phase(phase);
+endfunction
+  
+// connect_phase: Handles connections and setup after build phase
+function void short_packet_test::connect_phase(uvm_phase phase);  
+  super.connect_phase(phase);    
+  `uvm_info(get_name, "Entered connect_phase", UVM_LOW)
+endfunction
 
-  // start of simulation phase
+// end_of_elaboration_phase: Final setup before simulation starts
+function void short_packet_test::end_of_elaboration_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered end_of_elaboration_phase", UVM_LOW)        
+  
+  // Print UVM topology
+  uvm_top.print_topology();
+endfunction 
 
-  function void short_packet_test::start_of_simulation_phase(uvm_phase phase);                            
-    `uvm_info(get_name,"we are in SOS",UVM_LOW)
-  endfunction
+// start_of_simulation_phase: Initial setup at the start of simulation
+function void short_packet_test::start_of_simulation_phase(uvm_phase phase);                            
+  `uvm_info(get_name, "Entered start_of_simulation_phase", UVM_LOW)
+endfunction
 
-  // run phase
-
-  task short_packet_test::run_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                              
-  endtask
+// run_phase: Executes the main test sequence
+task short_packet_test::run_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered run_phase", UVM_LOW)                                              
+endtask
  
-  // extract phase
+// extract_phase: Performs data extraction tasks
+function void short_packet_test::extract_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered extract_phase", UVM_LOW)                                       
+endfunction
 
-  function void short_packet_test::extract_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in extract_phase",UVM_LOW)                                       
-  endfunction
+// check_phase: Verifies expected results against actual results
+function void short_packet_test::check_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered check_phase", UVM_LOW)                                         
+endfunction
 
-  // check phase
+// report_phase: Generates test report or summary
+function void short_packet_test::report_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered report_phase", UVM_LOW)                                        
+endfunction
 
-  function void short_packet_test::check_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in check_phase",UVM_LOW)                                         
-  endfunction
+// final_phase: Cleanup tasks and final reporting
+function void short_packet_test::final_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered final_phase", UVM_LOW)                                         
+endfunction
 
-  // report phase
-
-  function void short_packet_test::report_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in report_phase",UVM_LOW)                                        
-  endfunction
-
-  // final phase
-
-  function void short_packet_test::final_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in final_phase",UVM_LOW)                                         
-  endfunction
-
-/////////////////////
-//                 //
-//  CONFIG TEST    //
-//                 //
-/////////////////////
-
+//////////////////////
+//                  //
+//    SET CONFIG    //
+//                  //
+//////////////////////
 
 class set_config_test extends base_test;
 
-   `uvm_component_utils(set_config_test)
+  `uvm_component_utils(set_config_test)
 
-  extern function new(string name ="set_config_test",uvm_component parent=null);
+  extern function new(string name = "set_config_test", uvm_component parent = null);
   
+  // Phases
   extern function void build_phase(uvm_phase phase);                                  
- 
   extern function void connect_phase(uvm_phase phase);                                 
-
   extern function void end_of_elaboration_phase(uvm_phase phase);                      
-  
   extern function void start_of_simulation_phase(uvm_phase phase);     
-  
-  extern task run_phase(uvm_phase phase);                                                  // extern  phases
-  
+  extern task run_phase(uvm_phase phase);
   extern function void extract_phase(uvm_phase phase);                                 
-  
   extern function void check_phase(uvm_phase phase);                                   
-  
   extern function void report_phase(uvm_phase phase);                                 
-  
   extern function void final_phase(uvm_phase phase);
  
-     
 endclass
 
-  // constructor
 
-  function set_config_test::new(string name ="set_config_test",uvm_component parent=null);
-    super.new(name,parent);
-  endfunction
+// Constructor for set_config_test
+function set_config_test::new(string name = "set_config_test", uvm_component parent = null);
+  super.new(name, parent);
+endfunction
   
-  // build phase
-
-  function void set_config_test::build_phase(uvm_phase phase);
-    super.build_phase(phase);
-    set_config_int("env.ag","is_active",UVM_PASSIVE);
-  endfunction
+// build_phase: Sets up specific configurations for configuration testing
+function void set_config_test::build_phase(uvm_phase phase);
+  super.build_phase(phase);
   
-   // connect phase
+  // Set passive configuration
+  set_config_int("env.ag", "is_active", UVM_PASSIVE);
+endfunction
   
-  function void set_config_test::connect_phase(uvm_phase phase);  
-    super.connect_phase(phase);    
-    `uvm_info(get_name,"we are in connect_phase",UVM_LOW)
-  endfunction
+// connect_phase: Handles connections and setup after build phase
+function void set_config_test::connect_phase(uvm_phase phase);  
+  super.connect_phase(phase);    
+  `uvm_info(get_name, "Entered connect_phase", UVM_LOW)
+endfunction
 
-  // end of elaboration phase
+// end_of_elaboration_phase: Final setup before simulation starts
+function void set_config_test::end_of_elaboration_phase(uvm_phase phase);
+  // Print UVM topology
+  uvm_top.print_topology();
+endfunction 
 
-  function void set_config_test::end_of_elaboration_phase(uvm_phase phase);
-    uvm_top.print_topology();
-  endfunction 
+// start_of_simulation_phase: Initial setup at the start of simulation
+function void set_config_test::start_of_simulation_phase(uvm_phase phase);                            
+  `uvm_info(get_name, "Entered start_of_simulation_phase", UVM_LOW)
+endfunction
 
-  // start of simulation phase
-
-  function void set_config_test::start_of_simulation_phase(uvm_phase phase);                            
-    `uvm_info(get_name,"we are in SOS",UVM_LOW)
-  endfunction
-
-  // run phase
-
-  task set_config_test::run_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                              
-  endtask
+// run_phase: Executes the main test sequence
+task set_config_test::run_phase(uvm_phase phase);
+  `uvm_info(get_name, "Entered run_phase", UVM_LOW)                                              
+endtask
  
-  // extract phase
+// extract_phase: Performs data extraction tasks
+function void set_config_test::extract_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered extract_phase", UVM_LOW)                                       
+endfunction
 
-  function void set_config_test::extract_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in extract_phase",UVM_LOW)                                       
-  endfunction
+// check_phase: Verifies expected results against actual results
+function void set_config_test::check_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered check_phase", UVM_LOW)                                         
+endfunction
 
-  // check phase
+// report_phase: Generates test report or summary
+function void set_config_test::report_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered report_phase", UVM_LOW)                                        
+endfunction
 
-  function void set_config_test::check_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in check_phase",UVM_LOW)                                         
-  endfunction
-
-  // report phase
-
-  function void set_config_test::report_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in report_phase",UVM_LOW)                                        
-  endfunction
-
-  // final phase
-
-  function void set_config_test::final_phase(uvm_phase phase); 
-   `uvm_info(get_name,"we are in final_phase",UVM_LOW)                                         
-  endfunction
+// final_phase: Cleanup tasks and final reporting
+function void set_config_test::final_phase(uvm_phase phase); 
+  `uvm_info(get_name, "Entered final_phase", UVM_LOW)                                         
+endfunction
   
 `endif
+
+

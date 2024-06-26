@@ -1,32 +1,34 @@
 ///////////////////////////////////////////////////////////////////////
 //  File name     : yapp.sv                                          //
 //                                                                   //
-//  Description   : this file includes all the required files        //
+//  Description   : This file includes all the required files        //
 //                                                                   //
-//  Notes         : it have typedef enum and config db               //
+//  Notes         : It includes typedef enum and config db            //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef PACKAGE
 `define PACKAGE
 
-// we using enum to determine good and bad packet
-    typedef enum{GOOD_PARITY,BAD_PARITY}parity_t;
+// We use enum to determine good and bad packet
+typedef enum {GOOD_PARITY, BAD_PARITY} parity_t;
 
-    `include "yapp_packet.sv"          
+`include "yapp_packet.sv"
 
-    `include "yapp_tx_seqs.sv"       
+`include "yapp_tx_seqs.sv"  
 
-    `include "yapp_tx_sequencer.sv"    
+`include "yapp_tx_sequencer.sv"  
 
-    `include "yapp_tx_driver.sv"      
+`include "yapp_tx_driver.sv" 
 
-    `include "yapp_tx_monitor.sv"      
- 
-    `include "yapp_tx_agent.sv"       
-  
-    `include "yapp_tx_env.sv"      
+`include "yapp_tx_monitor.sv"  
 
-    `include "yapp_test_lib.sv"       
+`include "yapp_tx_agent.sv"  
+
+`include "yapp_tx_env.sv"   
+
+`include "yapp_test_lib.sv"       
 
 `endif
+
+
 

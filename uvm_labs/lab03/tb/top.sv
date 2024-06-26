@@ -8,19 +8,24 @@
 //  Notes         : it going to start the tb phases                                                                 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import uvm_pkg::*;                          
 
-  `include "uvm_macros.svh"              
+// Importing UVM package
+import uvm_pkg::*;                           
 
-  `include "../sv/yapp.svh"             
+// Including UVM macros
+`include "uvm_macros.svh"                   
+
+// Including application-specific header file
+`include "../sv/yapp.svh"                   
 
 module top();
-  
+
+  // Initial block to start the testbench
   initial
   begin
-
-// calling all phases and run the base test
-    run_test("base_test");             
+    // Calling the base test "base_test"
+    run_test("base_test");
   end
 
-endmodule 	
+endmodule
+

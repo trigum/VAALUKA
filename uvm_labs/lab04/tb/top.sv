@@ -3,10 +3,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  File name     : top.sv                                                                                          //
 //                                                                                                                  //
-//  Description   : this file is top module for yapp_router which have all the interface and design instatiation    //
+//  Description   : Top module for yapp_router containing interface and design instantiation                        //
 //                                                                                                                  //
-//                                                                                                                  //
-//  Notes         : it going to start the tb phases                                                                 //
+//  Notes         : Initiates the testbench phases                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import uvm_pkg::*;                       
@@ -19,7 +18,8 @@ module top();
   initial
   begin
 
-// calling all phases 
+    // Calling run_test to start the testbench
     run_test();                               
   end
-endmodule 	
+endmodule
+
