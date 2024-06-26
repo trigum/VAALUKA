@@ -5,7 +5,7 @@
 //                                                                                                                      //
 //  Description   : This file is the top module for yapp_router, containing all the interfaces and design instantiation.//
 //                                                                                                                      //
-//  Notes         : This module initiates the testbench phases for packet generation and verification.                  //
+//  version       : 02                                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import uvm_pkg::*;
@@ -13,7 +13,7 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 
 // Enumeration for generating packets with good and bad parity
-typedef enum {GOOD_PARITY, BAD_PARITY} parity_t;
+typedef enum {GOOD_PARITY , BAD_PARITY} parity_t;
 
 `include "../sv/yapp_packet.sv"
 

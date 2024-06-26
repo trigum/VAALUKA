@@ -6,7 +6,7 @@
 //                                                                   //
 //  Description   : This file contains the tx agent.                 //
 //                                                                   //
-//  Notes         : It has control over the agent.                   //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef ENVIRONMENT

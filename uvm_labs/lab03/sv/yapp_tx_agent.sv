@@ -6,9 +6,7 @@
 //  Description   : This file defines the TX agent in a UVM-based     //
 //                  verification environment.                         //
 //                                                                   //
-//  Notes         : The agent includes driver, monitor, and sequencer //
-//                  handles. It decides whether the agent is active   //
-//                  or passive.                                      //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef AGENT

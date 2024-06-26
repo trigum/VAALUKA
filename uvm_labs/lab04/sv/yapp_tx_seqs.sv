@@ -4,8 +4,7 @@
 //  Description   : This file defines the sequences class responsible  //
 //                  for generating stimulus.                           //
 //                                                                     //
-//  Notes         : This class creates instances of yapp_packet and    //
-//                  randomizes them for stimulus generation.           //
+//  version       : 02                                                 //
 /////////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCE

@@ -4,7 +4,7 @@
 //                                                                   //
 //  Description   : This file drives stimulus to the interface.      //
 //                                                                   //
-//  Notes         : It is the tx_yapp driver.                        //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef DRIVER

@@ -5,7 +5,7 @@
 //                                                                   //
 //  Description   : this file have all the signals to be randomized  //
 //                                                                   //
-//  Notes         : it have the parity calculation method            //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef YAPP_PACKET

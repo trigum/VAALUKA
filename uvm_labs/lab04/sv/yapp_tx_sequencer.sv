@@ -4,8 +4,7 @@
 //                                                                                //
 // Description : Defines the sequencer component for managing sequences.          //
 //                                                                                //
-// Notes       : This file defines a sequencer that acts as an intermediary       //
-//               between the driver and sequence components in a UVM environment. //
+// version     : 02                                                               //
 ////////////////////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCER

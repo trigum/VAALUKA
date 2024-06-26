@@ -5,9 +5,7 @@
 //  Description   : This file defines a sequence to generate stimulus //
 //                  packets for the yapp_tx system.                   //
 //                                                                    //
-//  Notes         : The sequence generates randomized packets using   //
-//                  the yapp_packet class, facilitating testing of    //
-//                  the system's packet handling capabilities.        //
+//  version       : 02                                                //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCES

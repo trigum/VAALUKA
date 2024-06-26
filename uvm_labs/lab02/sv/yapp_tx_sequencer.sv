@@ -1,13 +1,11 @@
 ///////////////////////////////////////////////////////////////////////
-//  File name     : yapp_tx_sequencer.sv                            //
+//  File name     : yapp_tx_sequencer.sv                             //
 //                                                                   //
 //  Description   : This file defines the sequencer component        //
 //                  responsible for coordinating packet generation   //
 //                  and transmission in the yapp_tx system.          //
 //                                                                   //
-//  Notes         : This sequencer acts as an intermediary between   //
-//                  the driver and sequence components, managing     //
-//                  the flow of data packets in the system.          //
+//  version       : 02                                               // 
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef SEQUENCER

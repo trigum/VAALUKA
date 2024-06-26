@@ -5,8 +5,7 @@
 //                                                                   //
 //  Description   : This file contains the tx_agent which is active. //
 //                                                                   //
-//  Notes         : This file includes the driver, monitor, and      //
-//                  sequencer components.                            //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef YAPP_AGENT

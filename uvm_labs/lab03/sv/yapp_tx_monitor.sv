@@ -6,9 +6,7 @@
 //  Description   : This file defines the monitor component for        //
 //                  observing signals from the interface.              //
 //                                                                     //
-//  Notes         : This monitor class is responsible for monitoring   //
-//                  signals from the interface and providing relevant  //
-//                  information during simulation phases.              //
+//  version       : 02                                                 //
 /////////////////////////////////////////////////////////////////////////
 
 

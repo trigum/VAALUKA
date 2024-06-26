@@ -6,10 +6,7 @@
 //                  respective sequence in a UVM-based verification  //
 //                  environment.                                     //
 //                                                                   //
-//  Notes         : The class includes phases like build, connect,   //
-//                  end_of_elaboration, start_of_simulation, run,    //
-//                  extract, check, report, and final, which are     //
-//                  essential for the UVM test flow.                 //
+//  version        : 02                                              //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef TEST

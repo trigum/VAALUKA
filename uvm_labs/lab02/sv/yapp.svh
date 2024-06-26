@@ -5,15 +5,14 @@
 //  Description   : This file includes all the required files for    //
 //                  the YAPP router testbench.                       //
 //                                                                   //
-//  Notes         : It includes type definitions, configuration      //
-//                  database, and various modules.                   //
+//  version       :  02                                              //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef PACKAGES
 `define PACKAGES
 
   // Define an enumeration to classify packets as having good or bad parity
-  typedef enum {GOOD_PARITY, BAD_PARITY} parity_t;
+  typedef enum {GOOD_PARITY , BAD_PARITY} parity_t;
 
   // Include the sequence item (packet) definition
   `include "yapp_packet.sv"

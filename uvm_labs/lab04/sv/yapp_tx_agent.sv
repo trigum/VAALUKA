@@ -5,7 +5,7 @@
 //  Description   : Defines an agent for transmitting packets with   //
 //                  active behavior.                                 //
 //                                                                   //
-//  Notes         : Contains driver, monitor, and sequencer handles. //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef AGENT

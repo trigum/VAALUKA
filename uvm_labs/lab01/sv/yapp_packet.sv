@@ -9,7 +9,7 @@
 //                  packet generation and includes methods for       //
 //                  randomization and parity calculation.            //
 //                                                                   //
-//  Notes         : It has the parity calculation method             //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef YAPP_PACKET

@@ -4,7 +4,7 @@
 //                                                                   //
 //  Description   : Drives stimulus to the interface                 //
 //                                                                   //
-//  Notes         : This is the driver for transmitting yapp packets //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef DRIVER

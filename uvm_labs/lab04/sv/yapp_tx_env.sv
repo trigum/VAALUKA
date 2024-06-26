@@ -6,8 +6,7 @@
 //  Description   : This file defines the environment for the TX application.       //  
 //                  It creates an instance of the agent for driving transactions.   //
 //                                                                                  //
-//  Notes         : This environment sets up the test environment for               //
-//                  transmitting packets using the agent.                           //
+//  version       : 02                                                              //
 //////////////////////////////////////////////////////////////////////////////////////
 
 `ifndef ENVIRONMENT

@@ -4,9 +4,7 @@
 //  Description   : This file defines the monitor for monitoring      //
 //                  signals from the interface in the yapp_tx system. //
 //                                                                    //
-//  Notes         : The monitor captures and observes signals         //
-//                  exchanged on the interface, facilitating          //
-//                  debugging and verification of the yapp_tx system .//
+//   version      : 02                                                //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef MONITOR

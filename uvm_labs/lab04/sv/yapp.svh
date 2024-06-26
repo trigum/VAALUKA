@@ -3,14 +3,14 @@
 //                                                                   //
 //  Description   : this file includes all the required files        //
 //                                                                   //
-//  Notes         : it have typedef enum and config db               //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef PACKAGE
 `define PACKAGE
 
     // we using enum to determine good and bad packet
-    typedef enum{GOOD_PARITY,BAD_PARITY}parity_t;
+    typedef enum{GOOD_PARITY , BAD_PARITY}parity_t;
 
     `include "yapp_packet.sv"     
 

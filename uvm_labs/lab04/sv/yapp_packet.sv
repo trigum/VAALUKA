@@ -6,8 +6,7 @@
 //  Description   : Definition of yapp_packet class, containing      // 
 //                  signals for randomization and parity calculation //
 //                                                                   //
-//  Notes         : This class includes methods for calculating      //
-//                  packet parity and constraints for randomization  //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef YAPP_PACKET
@@ -15,7 +14,7 @@
 
 //////////////////////
 //                  //
-//  Normal PACKET   //
+//  yapp   PACKET   //
 //                  //
 //////////////////////
 
@@ -51,13 +50,16 @@ class yapp_packet extends uvm_sequence_item;
     `uvm_field_enum(parity_t, parity_type, UVM_ALL_ON | UVM_DEC)
   `uvm_object_utils_end
     
+  // ALL CONSTRAINT ARE IN SOFT TO GET OVERRIDEN BY INLINE CONSTRAINT IN
+  // SEQUENCE
+
   // Address constraint
   constraint add {soft address < 3;}                                     
   
   // Length constraint
   constraint len {soft length inside {[1:63]};}                          
      
-  // Parity type constraint
+  // Parity type constraint 
   constraint par_t {soft parity_type dist {GOOD_PARITY := 5, BAD_PARITY := 1};}
      
   // Payload size constraint

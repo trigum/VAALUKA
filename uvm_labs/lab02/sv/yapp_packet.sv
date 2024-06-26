@@ -6,7 +6,7 @@
 //  Description   : This file contains all the signals to be         //
 //                  randomized for the yapp_packet sequence item.    //
 //                                                                   //
-//  Notes         : It includes the parity calculation method.       //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef YAPP_PACKET

@@ -3,7 +3,7 @@
 //                                                                                                                     //
 //  Description   : This file is the top module for yapp_router, which contains all interface and design instantiation.//
 //                                                                                                                     //
-//  Notes         : It initiates the testbench phases.                                                                 //
+//  version       : 02                                                                                                 //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import uvm_pkg::*;                                                                                 

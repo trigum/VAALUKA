@@ -6,8 +6,7 @@
 //  Description   : This file defines the TX driver in a UVM-based    //
 //                  verification environment.                         //
 //                                                                   //
-//  Notes         : The driver drives stimulus to the interface. It   //
-//                  interacts with sequences of type `yapp_packet`.   //
+//  version       : 02                                               //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef DRIVER
