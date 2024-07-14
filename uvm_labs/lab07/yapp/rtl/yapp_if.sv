@@ -1,25 +1,28 @@
-/*-----------------------------------------------------------------
-File name     : yapp_if.sv
-Description   : this file is interface which connect tb and design
-Notes         : 
--------------------------------------------------------------------
------------------------------------------------------------------*/
 
-//------------------------------------------------------------------------------
-//
-// yapp interface
-//
-//------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+// File name     : yapp_if.sv                                         //
+//                                                                    //
+// Description   : This file defines an interface to connect TB and   //
+//                 design                                             //
+//                                                                    //
+// Version       : 2.0                                                //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
 
-interface yapp_if (input bit clock,reset);   // input clock and reset
-  
-  logic [7:0] in_data;                       // input data
-  
-  logic in_data_vld;                         // data valid
-  
-  logic in_suspend;                          // suspend
-  
-  logic error;                                // error signal
- 
+interface yapp_if (input bit clock, reset);
+
+  // 8-bit input data
+  logic [7:0] in_data;
+
+  // Input data valid signal
+  logic in_data_vld;
+
+  // Suspend signal
+  logic in_suspend;
+
+  // Error signal
+  logic error;
+
 endinterface
 
