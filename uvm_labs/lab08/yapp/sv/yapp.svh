@@ -3,16 +3,16 @@
 //                                                                   //
 //  Description   : this file includes all the required files        //
 //                                                                   //
-//  Notes         : it have typedef enum and config db               //
+//  version       : 2.0                                              //
 ///////////////////////////////////////////////////////////////////////
 
 `ifndef PACKAGES
 `define PACKAGES
 
-// we using enum to determine good and bad packet
+    // we using enum to determine good and bad packet
     typedef enum{GOOD_PARITY,BAD_PARITY}parity_t;
 
-// we using config db typedef to set interface
+    // we using config db typedef to set interface
     typedef uvm_config_db #(virtual yapp_if) yapp_vif_config;
 
     `include "yapp_packet.sv"

@@ -1,16 +1,14 @@
 
-/*-----------------------------------------------------------------
-File name     : router_virtual_sequencer.sv
-Description   : this file have the real sequencer handle 
-Notes         : 
--------------------------------------------------------------------
------------------------------------------------------------------*/
+////////////////////////////////////////////////////////////////
+//                                                            //
+// File name     : router_virtual_sequencer.sv                //
+//                                                            //
+// Description   : this file have the real sequencer handle   //
+//                                                            //
+// version       : 2.0                                        //
+//                                                            //
+////////////////////////////////////////////////////////////////
 
-//------------------------------------------------------------------------------
-//
-// test library
-//
-//------------------------------------------------------------------------------
 
 `ifndef VIRTUAL_SEQUENCER
 `define VIRTUAL_SEQUENCER
@@ -18,8 +16,10 @@ Notes         :
 class router_virtual_sequencer extends uvm_sequencer;
   `uvm_component_utils(router_virtual_sequencer)
 
+  // creating handle for hbus_master_sequencer
   hbus_master_sequencer h_seqr;
 
+  // creating handle for sequencer
   sequencer seqr;
 
   extern function new(string name="router_virtual_sequencer",uvm_component parent=null);
@@ -32,7 +32,7 @@ class router_virtual_sequencer extends uvm_sequencer;
   
   extern function void start_of_simulation_phase(uvm_phase phase);     
   
-  extern task run_phase(uvm_phase phase);                                                  // extern  phases
+  extern task run_phase(uvm_phase phase);                                                  
   
   extern function void extract_phase(uvm_phase phase);                                 
   
@@ -76,7 +76,7 @@ endclass
   // run phase
 
   task router_virtual_sequencer::run_phase(uvm_phase phase);
-    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                              // run phase which print topology
+    `uvm_info(get_name,"we are in run_phase",UVM_LOW)                                           
   endtask
  
   // extract phase
