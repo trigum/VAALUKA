@@ -1,14 +1,30 @@
+////////////////////////////////////////////////////////////////////////
+//  File name     : yapp_if.sv                                        //
+//                                                                    //
+//  Description   : this is a interface file                          //
+//                                                                    //
+//  version       : 2.0                                               //
+////////////////////////////////////////////////////////////////////////
 
-interface yapp_if (input bit clock,reset);
+
+`ifndef INTERFACE
+`define INTERFACE
+
+  // Interface definition for yapp_if
+  interface yapp_if (input bit clock, reset);
   
-  logic [7:0] in_data;
+    // Data input signal (8-bit)
+    logic [7:0] in_data;
   
-  logic in_data_vld;
+    // Valid signal for data input
+    logic in_data_vld;
   
-  logic in_suspend;
+    // Suspend signal
+    logic in_suspend;
+  
+    // Error signal
+    logic error;
 
-  logic error;
-
-endinterface
-
+  endinterface
+`endif
 
